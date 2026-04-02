@@ -23,6 +23,25 @@ status: draft
 
 ---
 
+## 通用原理
+
+多 Agent 不是“更高级的默认答案”，而是当单 Agent 在上下文容量、并行性、专业化或职责边界上遇到瓶颈时的一种组织方式。本章真正关心的是：
+
+- 什么时候应该拆分职责，而不是继续堆上下文
+- 拆分之后该选什么拓扑、怎么分配控制权
+- Agent 之间如何协作，才能降低耦合和通信成本
+
+这些问题同样存在于研究、客服和业务流程场景，不只属于代码类 Agent。
+
+## 场景映射
+
+| Agent 类型 | 为什么会拆多 Agent | 典型角色划分 | 主要通信对象 |
+|-----------|------------------|-------------|-------------|
+| Coding Agent | 仓库多、上下文重、分析与执行职责不同 | Orchestrator、Research、Analysis、Execution | 任务状态、差异结果、执行摘要 |
+| Research Agent | 主题广、资料多、需要并行探索 | Coordinator、Searcher、Verifier、Writer | 来源摘要、证据结论、待验证问题 |
+| Support Agent | 需要意图识别、检索、回复、升级分层 | Router、Retriever、Responder、Escalation | 用户问题、命中知识、处理建议 |
+| 流程 / 业务执行 Agent | 业务步骤复杂、节点责任不同 | Scheduler、Checker、Executor、Auditor | 当前节点、规则结果、执行回执 |
+
 ## 章节地图
 
 节间依赖关系（建议阅读顺序）：
@@ -70,7 +89,7 @@ status: draft
 
 ---
 
-## 追齐 Agent 速查
+## 主案例展开：功能追齐 Agent
 
 ### 三个 Sub-Agent 分工
 
@@ -114,6 +133,12 @@ completed.json
 
 ## 与其他章节关联
 
-- **← [[../05-planning/00-chapter-index|第五章：规划与任务分解]]**：Orchestrator 的任务分解逻辑依赖第五章方法论
+- **← [[../05-planning-long-tasks/00-chapter-index|第五章：规划与任务分解]]**：Orchestrator 的任务分解逻辑依赖第五章方法论
 - **← [[../06-harness/00-chapter-index|第六章：Agent Harness 与工具层]]**：Sub-Agent 使用的所有工具在第六章中定义和注册
 - **→ [[../08-evaluation/00-chapter-index|第八章：多 Agent 系统评测]]**：评测 Research 准确率、Analysis 精度、Execution 代码质量的方法
+
+这套 Orchestrator + Sub-Agent 分工是主案例的具体拓扑，不是本章唯一结论。更通用的是：
+
+- 先确认是否真的需要拆分，再决定怎么拆
+- 拆分后优先确保职责清晰、上下文隔离、通信可压缩
+- 多 Agent 带来的是协作收益，也带来新的协调成本
