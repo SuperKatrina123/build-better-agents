@@ -1,0 +1,67 @@
+<h2>Agent 课程页面排版方向</h2>
+<p class="subtitle">先确定整套课程的基础页面语言，再细化到单章模板和组件规范。</p>
+
+<div class="cards">
+  <div class="card" data-choice="map-first" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">A. 地图式阅读</div>
+        <div class="mockup-body">
+          <div class="label">顶部导读</div>
+          <div class="mock-nav">课程定位 | 章节地图 | 学习建议</div>
+          <div style="display:flex; gap:12px; margin-top:12px;">
+            <div class="mock-sidebar" style="width:28%;">章节导航<br>知识地图<br>前后关联</div>
+            <div class="mock-content" style="width:72%;">学习目标<br>带着问题阅读<br>核心阅读<br>小练习<br>拓展阅读</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>地图式阅读</h3>
+      <p>强调知识框架、章节关系和认知定位，适合体系化自学。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="doc-style" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">B. 文档式专栏</div>
+        <div class="mockup-body">
+          <div class="label">章节头图 + 摘要</div>
+          <div class="mock-content">学习目标 / 前置知识 / 预计时长</div>
+          <div class="section"></div>
+          <div class="mock-content">正文连续阅读区</div>
+          <div class="section"></div>
+          <div class="mock-content">练习 / 阅读延伸 / 下一节预告</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>文档式专栏</h3>
+      <p>像高质量技术专栏，阅读流畅，页面负担轻，但结构感偏弱。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="workbook" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">C. 工作簿式页面</div>
+        <div class="mockup-body">
+          <div class="mock-content">本章任务卡</div>
+          <div style="display:flex; gap:12px; margin-top:12px;">
+            <div class="mock-content" style="width:50%;">核心概念卡片</div>
+            <div class="mock-content" style="width:50%;">案例拆解卡片</div>
+          </div>
+          <div style="display:flex; gap:12px; margin-top:12px;">
+            <div class="mock-content" style="width:50%;">练习区</div>
+            <div class="mock-content" style="width:50%;">笔记区</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>工作簿式页面</h3>
+      <p>互动感强，适合边学边写，但页面元素更多，设计成本更高。</p>
+    </div>
+  </div>
+</div>
